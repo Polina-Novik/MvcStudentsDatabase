@@ -1,43 +1,104 @@
 package by.novik.controller;
 
 
-import by.novik.service.TestService;
+import by.novik.model.Student;
+
+import by.novik.service.StudentService;
+import by.novik.util.DataBaseConnection;
 import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
+
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+
 @RequiredArgsConstructor
 @Controller
-@RequestMapping("hello")
+@RequestMapping("student")
 @Slf4j
-public class HelloController {
-    private final TestService service;
+public class StudentController {
+private  final StudentService service;
+    /**
+     * a
+     */
 
 
+    private int count = 0;
 
-    //аналог тго что обычно делаем через сервлет
-    @GetMapping
-    public String hello(HttpSession session, Model model) { //в скобках чтобы добавить атрибут
-        log.info("hello from endpoint");
-        session.setAttribute("test","ahahahaha");
-        model.addAttribute("second","hihihihihi"); //модель например когда атрибут хранить не надо типо добавить время
-        return "index2.jsp"; //никаких requestdispatcher  и тд
+    @GetMapping("list")
+    public String getStudents(HttpSession session, Model model) {
+
+        Statement statement = DataBaseConnection.getStatement();
+        ResultSet resultSet = null;
+
+            try {
+                List<Student> students = new ArrayList<>();
+                resultSet = statement.executeQuery("select * from students");
+
+                while (resultSet.next()) {
+                    int id = resultSet.getInt("id");
+                    String description = resultSet.getString("description");
+                    int courseId = resultSet.getInt("course_id");
+
+                    Student student = new Student(id, description, courseId);
+                    students.add(student);
+                }
+                model.addAttribute("students",students);
+                model.addAttribute("size",students.size());
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+
+        try {
+
+            statement.execute("update counter set count=count+1 where id=1");
+            resultSet = statement.executeQuery("select * from counter");
+            while (resultSet.next()) {
+                count = resultSet.getInt("count");
+
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        session.setAttribute("count", count);
+        return "students.jsp";
     }
-    @GetMapping("user/{id}")
-    public String getUserById(@PathVariable int id) { //в скобках - число в пути сохрнаить в переменную метода
-        //можно было int id, но если доб () то Integer+ id может быть а может и не быть (@PathVariable (required = false) Integer id)
-        String user=service.getUserById(id);
-        log.info("we try to find user with id: {}", id);
-        return "user.jsp";
+    @GetMapping("new")
+
+    public String createUser(@Valid Student student, BindingResult bindingResult) throws SQLException {
+        if (bindingResult.hasErrors()) {
+            log.info("Errors: {}", bindingResult.getAllErrors());
+            return "errors.jsp";
+        }
+else{
+        log.info("student received: {}", student);
+        service.save(student);
+        return "index.jsp";
+}
+//http://localhost:8080/student/new?id=4&description=Maxim&courseId=4
+
     }
-    @GetMapping("client")
-    public String getClient(@RequestParam ("age") int age) {
-        log.info("we want to check client with age: {}", age);
-        return "user.jsp"; //http://localhost:8080/hello/client?age=20 после вопроса request parameter
+
+    @GetMapping("{id}")
+    public String getById(@PathVariable("id") int id, Model model) throws SQLException {
+        Student student=service.findById(id);
+
+            model.addAttribute("student", student);
+            return "your_student.jsp";
+
     }
+//http://localhost:8080/student/4
 }

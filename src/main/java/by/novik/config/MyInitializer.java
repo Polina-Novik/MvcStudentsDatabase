@@ -4,14 +4,14 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 public class MyInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     protected Class<?>[] getRootConfigClasses() {
-        return null; //у нас нет рут конфигс - поэтому исправили на 0
+        return null;
     }
 
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[]{SpringConfig.class}; //связываем конфиг диспетчер с классом конфигурации
+        return new Class[]{SpringConfig.class};
     }
 
     protected String[] getServletMappings() {
-        return new String[]{"/"}; //массив и тут и там одим значением по сути заполнили
+        return new String[]{"/"};
     }
 }

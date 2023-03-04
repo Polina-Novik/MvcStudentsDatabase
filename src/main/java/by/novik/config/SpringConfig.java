@@ -9,13 +9,13 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-@EnableWebMvc //по 2-м аннотациям поймет что это паттерн мвс
+@EnableWebMvc
 @ComponentScan("by.novik")
-public class SpringConfig implements WebMvcConfigurer { //Web Mvc Config - сойденяет все бины здесь, добавляем когда добавляем interceptor
-@Bean
-public FirstInterceptor getFirstInterceptor() {
-    return new FirstInterceptor();
-}
+public class SpringConfig implements WebMvcConfigurer {
+    @Bean
+    public FirstInterceptor getFirstInterceptor() {
+        return new FirstInterceptor();
+    }
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {

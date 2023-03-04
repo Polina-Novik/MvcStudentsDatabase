@@ -7,10 +7,14 @@
 
 </head>
 <body>
-<h1>Hello,
+<h1>List of students: <h1/>
+
     <c:forEach var="student" items="${students}">
-    <div><c:out value="${student.id}, ${student.description} $, ${student.courseId}"/>
+    <div><c:out value="id : ${student.id}, name: ${student.description}, course id: ${student.courseId}"/>
     </div>
     </c:forEach>
+        <br>
+        <c:out value="this page was visited ${count} times" />
+
 </body>
 </html>

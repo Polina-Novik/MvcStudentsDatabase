@@ -1,14 +1,19 @@
 package by.novik.model;
 
-public class Student{
+import jakarta.validation.constraints.Min;
+
+import jakarta.validation.constraints.Size;
+
+public class Student {
+
+    @Min(value = 1,message = "id can't be less than 1")
     private int id;
+    @Size(min=2, max=10,message = "name should be more than {min} and less than {max}")
     private String description;
+    @Min(value = 1,message = "course id can't be less than 1")
     private int courseId;
 
-    public Student(String description, int courseId) {
-        this.description = description;
-        this.courseId = courseId;
-    }
+
 
     public Student(int id, String description, int courseId) {
         this.id = id;

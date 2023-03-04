@@ -1,4 +1,4 @@
-package by.novik.repository;
+package by.novik.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
