@@ -20,10 +20,11 @@ public class StudentRepository {
 
     public void save(Student student) throws SQLException {
 
-        int courseId=student.getCourseId();
-        String description=student.getDescription();
-        statement.execute("insert into students (description,course_id) values ('"+description+"',"+courseId+")");
+        int courseId = student.getCourseId();
+        String description = student.getDescription();
+        statement.execute("insert into students (description,course_id) values ('" + description + "'," + courseId + ")");
     }
+
     public Student findById(int number) throws SQLException {
         List<Student> students = new ArrayList<>();
         resultSet = statement.executeQuery("select * from students");
@@ -37,7 +38,7 @@ public class StudentRepository {
             students.add(student);
         }
         return students.stream()
-                .filter(student -> student.getId()==number)
+                .filter(student -> student.getId() == number)
                 .findAny().orElseThrow(() -> new NoSuchElementException("Student is not found"));
 
     }

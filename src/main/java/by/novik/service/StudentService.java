@@ -17,6 +17,7 @@ public class StudentService {
     public Student findById(int number) throws SQLException {
         return repository.findById(number);
     }
+
     public void save(Student student) throws SQLException {
         repository.save(student);
     }

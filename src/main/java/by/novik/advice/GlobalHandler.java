@@ -16,9 +16,9 @@ public class GlobalHandler {
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(NoSuchElementException.class)
     public String handleException(HttpServletRequest request, Exception ex) {
-        log.info("We have found the error: {} using URI {}, URL {}",ex.getMessage(),
+        log.info("We have found the error: {} using URI {}, URL {}", ex.getMessage(),
 
-                request.getRequestURI(),request.getRequestURL().toString());
+                request.getRequestURI(), request.getRequestURL().toString());
         return "errors.jsp";
     }
 }

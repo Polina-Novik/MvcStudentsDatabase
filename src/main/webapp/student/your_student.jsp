@@ -8,8 +8,8 @@
 </head>
 <body>
 <h1>Student by id: <h1/>
-        <br>
-        <c:out value="id : ${student.id}, name: ${student.description}, course id: ${student.courseId}" />
+    <br>
+    <c:out value="id : ${student.id}, name: ${student.description}, course id: ${student.courseId}"/>
 
 </body>
 </html>

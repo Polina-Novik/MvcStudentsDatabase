@@ -12,6 +12,7 @@ public class DataBaseConnection {
     private static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     private static Connection connection;
     private static Statement statement;
+
     static {
         try {
             Class.forName(JDBC_DRIVER);
@@ -19,7 +20,7 @@ public class DataBaseConnection {
             throw new RuntimeException(e);
         }
         try {
-            connection= DriverManager.getConnection(URL,USERNAME,PASSWORD);
+            connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             statement = connection.createStatement();
         } catch (SQLException e) {
             throw new RuntimeException(e);

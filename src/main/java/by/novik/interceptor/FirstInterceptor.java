@@ -12,13 +12,13 @@ public class FirstInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-      log.info("we call the following endpoint: {}", request.getRequestURI());
+        log.info("we call the following endpoint: {}", request.getRequestURI());
         return true;
     }
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-log.info("students: {}",modelAndView.getModel().get("students"));
-      log.info("how many students returned: {}",modelAndView.getModel().get("size"));
+        log.info("students: {}", modelAndView.getModel().get("students"));
+        log.info("how many students returned: {}", modelAndView.getModel().get("size"));
     }
 }

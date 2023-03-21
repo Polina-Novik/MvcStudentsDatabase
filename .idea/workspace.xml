@@ -9,24 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee310de2-7067-4189-9de1-7def5746dfa7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+    <list default="true" id="ee310de2-7067-4189-9de1-7def5746dfa7" name="Changes" comment="Changed StudentController.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/novik/advice/GlobalHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/novik/advice/GlobalHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/novik/config/MyInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/novik/config/MyInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/novik/config/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/novik/config/SpringConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/novik/controller/DataBaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/novik/util/DataBaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/novik/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/novik/controller/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/novik/interceptor/FirstInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/novik/interceptor/FirstInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/novik/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/novik/model/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/novik/repository/StudentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/novik/repository/StudentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/novik/service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/novik/service/StudentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/student/students.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/student/students.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/student/your_student.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/student/your_student.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,25 +41,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Asus/IdeaProjects/MvcStudentsDatabase&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;453daa5ffb2c352cb30aaa3893d4716f&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Asus/IdeaProjects/MvcStudentsDatabase",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "spring.configuration.checksum": "453daa5ffb2c352cb30aaa3893d4716f"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Asus\IdeaProjects\MvcStudentsDatabase\src\main\webapp\student" />
@@ -195,8 +179,17 @@
       <workItem from="1672263436421" duration="579000" />
       <workItem from="1672264033915" duration="15488000" />
       <workItem from="1677967549042" duration="63000" />
-      <workItem from="1677968013137" duration="328000" />
+      <workItem from="1677968013137" duration="460000" />
+      <workItem from="1679145449764" duration="22000" />
     </task>
+    <task id="LOCAL-00001" summary="Changed StudentController.java">
+      <created>1677968402297</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1677968402297</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,5 +205,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Changed StudentController.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed StudentController.java" />
   </component>
 </project>

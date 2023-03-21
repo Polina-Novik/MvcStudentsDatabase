@@ -6,13 +6,12 @@ import jakarta.validation.constraints.Size;
 
 public class Student {
 
-    @Min(value = 1,message = "id can't be less than 1")
+    @Min(value = 1, message = "id can't be less than 1")
     private int id;
-    @Size(min=2, max=10,message = "name should be more than {min} and less than {max}")
+    @Size(min = 2, max = 10, message = "name should be more than {min} and less than {max}")
     private String description;
-    @Min(value = 1,message = "course id can't be less than 1")
+    @Min(value = 1, message = "course id can't be less than 1")
     private int courseId;
-
 
 
     public Student(int id, String description, int courseId) {
